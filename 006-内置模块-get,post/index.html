@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button class="maoyan">1、Get请求获取猫眼数据</button>
+    <br>
+    <br>
+    <br>
+    <button class="xiaomi">2、Post请求获取小米优品数据</button>
+    <script>
+
+
+        //1、Get请求
+        var maoYanBtn = document.querySelector('.maoyan');
+        maoYanBtn.addEventListener('click', function () {
+            fetch('http://localhost:3000/api/getMaoyanData').then(res => res.json()).then(res => {
+                console.log('前端get请求猫眼数据：', res);
+            })
+        })
+
+
+        //2、Post请求
+        var xiaomiBtn = document.querySelector('.xiaomi');
+        xiaomiBtn.addEventListener('click', function () {
+            fetch('http://localhost:3000/api/xiaomidata').then(res => res.json()).then(res => {
+                console.log('前端Post请求小米优品数据：', res);
+            })
+        })
+
+
+    </script>
+</body>
+
+</html>
